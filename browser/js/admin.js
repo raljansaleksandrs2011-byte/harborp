@@ -8,7 +8,7 @@ var admlist = new Vue({
         cmdlist: [],
         text: [],
         getArgs: function (command) {
-            return cmds[command] && cmds[command].args || "нет аргументов";
+            return cmds[command] && cmds[command].args || "no arguments";
         },
 		getState: function (command) {
             return cmds[command] && cmds[command].target || false;

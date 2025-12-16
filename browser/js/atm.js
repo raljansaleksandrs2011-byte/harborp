@@ -8,7 +8,7 @@ var atm = new Vue({
         holder: "Elon Musk",
         balance: "19999$",
         taxacc: "-99$",
-        plholder: "значение",
+        plholder: "meaning",
         value: "",
     },
     methods: {

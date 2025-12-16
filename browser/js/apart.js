@@ -2,7 +2,7 @@ var aparts = new Vue({
     el: ".main",
     data: {
         active: false,
-		apartlist: [ [ 1, "Государство", "50000$", 3, "0/3" ] ]
+		apartlist: [ [ 1, "Goverment", "50000$", 3, "0/3" ] ]
     },
     methods: {
 		hide: function () {

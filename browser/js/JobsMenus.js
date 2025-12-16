@@ -1,4 +1,4 @@
-﻿var JobStatsInfo = new Vue({
+var JobStatsInfo = new Vue({
     el: ".JobStatsInfo",
     data: {
         active: false,
@@ -25,7 +25,7 @@ var Construction = new Vue({
     el: ".Construction",
     data: {
         active: false,
-        header: "Строитель",
+        header: "Builder",
         money: "1",
         jobid: 11,
         work: 0,
@@ -58,7 +58,7 @@ var Miner = new Vue({
     el: ".Miner",
     data: {
         active: false,
-        header: "Каменщик",
+        header: "Miner",
         money: "1",
         money2: "2",
         money3: "3",
@@ -95,7 +95,7 @@ var Diver = new Vue({
     el: ".Diver",
     data: {
         active: false,
-        header: "Дайвер",
+        header: "Diver",
         money: "1",
         jobid: 13,
         work: 0,

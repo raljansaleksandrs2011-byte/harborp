@@ -6,12 +6,12 @@ var auto = new Vue({
         indexC: 0,
 		cur: "$",
         models: ["Tesla Model S","Tesla Model 3","Tesla Model X"],
-        colors: ["Черный", "Белый", "Красный", "Оранжевый", "Желтый", "Зеленый", "Голубой", "Синий", "Фиолетовый"],
+        colors: ["Black", "White", "Red", "Orange", "Yellow", "Green", "Light Blue", "Blue", "Violet"],
         prices: [19,199,1999],
         speeds: [19,199,1999],
         accelerations: [19,199,1999],
         places: [19,199,1999],
-        leftMenuHeader: "Автосалон",
+        leftMenuHeader: "Autosalon",
         getSpeed: function(modelName){
             return globalModelsDetails[modelName] && globalModelsDetails[modelName].maxSpeed || "";
         },

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -23,7 +23,7 @@
 	<div id="safezone">
 		<div style="zoom: 75%;" class="inGameHud" v-if="show">
 			<!-- MAIN BLOCK UP RIGHT -->
-			<!-- <div class="mood">Настроение <a>{{mood}}</a></div> -->
+			<!-- <div class="mood">Mood <a>{{mood}}</a></div> -->
 			<div class="main">
 				<div class="time">
 					<div class="vrema">{{time}}</div>
@@ -32,8 +32,8 @@
 				<div class="line"></div>
 				<div class="nameblock">
 					<img src="./assets/images/hud/ragemp_pro.png" class="logo">
-					<div class="freedom">SHADOW ROLEPLAY</div>
-					<div class="bonus">by ragemp.pro</div>
+					<div class="freedom">Harbo Roleplay</div>
+					<div class="bonus">harboteam</div>
 				</div>
 				<!-- <div class="line2"></div> -->
 				<!-- <div class="moneyblock"> -->
@@ -49,12 +49,12 @@
 					</div>
 					<div class="money">${{money}}</div>
 					<div style="top: 0;" class="lineleft"></div>
-					<div class="desc">НАЛИЧНЫЕ</div>
+					<div class="desc">CASH</div>
 				</div>
 				<div style="margin-top: 16vh; zoom: 70%; right: 2.8vh;" class="moneyb">
 					<div style="margin-right: 0.4vh;" class="money">${{bank}}</div>
 					<div style="width: 0.6vh;" class="lineleft"></div>
-					<div style="margin-right: 0.4vh;" class="desc">БАНК</div>
+					<div style="margin-right: 0.4vh;" class="desc">BANK</div>
 					<div v-if="cashb" style="margin-right: -3vh;" class="addcash">{{cashbank}}$</div>
 				</div>
 
@@ -77,52 +77,52 @@
 						<div class="block">{{lastbonus}}</div>
 						<img src="./assets/images/hud/gift.png" class="icon">
 					</div>
-					<div class="helptext">НАЖМИТЕ <a>F5</a></div>
-					<div class="helptext2">ЧТОБЫ СКРЫТЬ ПОДСКАЗКИ</div>
+					<div class="helptext">PRESS <a>F5</a></div>
+					<div class="helptext2">TO HIDE TIPS</div>
 					<div class="bottomline"></div>
 					<div class="bh">
 						<div class="bk">N</div>
-						<div class="key">МИКРОФОН</div>
+						<div class="key">MICROPHONE</div>
 					</div>
 					<div class="bh">
 						<div class="bk">{{binds[0]}}</div>
-						<div class="key">ИНВЕНТАРЬ</div>
+						<div class="key">INVETORY</div>
 					</div>
 					<div class="bh">
 						<div class="bk">G</div>
-						<div class="key">ВЗАИМОДЕЙСТВИЕ</div>
+						<div class="key">INTERACTION</div>
 					</div>
 					<div class="bh">
 						<div class="bk">U</div>
-						<div class="key">АНИМАЦИИ</div>
+						<div class="key">ANIMATIONS</div>
 					</div>
 					<div class="bh">
 						<div class="bk">F2</div>
-						<div class="key">МЕНЮ ПЕРСОНАЖА</div>
+						<div class="key">MENU/STATISTICS</div>
 					</div>
 					<div class="bh">
 						<div class="bk">F3</div>
-						<div class="key">ПЕРЕЗАГРУЗИТЬ МИКРОФОН</div>
+						<div class="key">RESET MICROPHONE</div>
 					</div>
 					<div v-if="inVeh" class="bh">
 						<div class="bk">J</div>
-						<div class="key">ПРИСТЕГНУТЬ РЕМЕНЬ</div>
+						<div class="key">FASTEN SEATBELT</div>
 					</div>
 					<div v-if="inVeh && !engine" class="bh">
 						<div style="animation: blink-data2 1.5s linear infinite alternate" class="bk">ALT</div>
-						<div class="key">ДВИГАТЕЛЬ</div>
+						<div class="key">ENGINE</div>
 					</div>
 					<div v-if="inVeh && engine" class="bh">
 						<div class="bk">ALT</div>
-						<div class="key">ДВИГАТЕЛЬ</div>
+						<div class="key">ENGINE</div>
 					</div>
 					<div v-if="inVeh && doors" class="bh">
 						<div style="animation: blink-data2 1.5s linear infinite alternate" class="bk">{{binds[3]}}</div>
-						<div class="key">ДВЕРИ</div>
+						<div class="key">DOORS</div>
 					</div>
 					<div v-if="inVeh && !doors" class="bh">
 						<div class="bk">{{binds[3]}}</div>
-						<div class="key">ДВЕРИ</div>
+						<div class="key">DOORS</div>
 					</div>
 				</div>
 			</div>
@@ -130,39 +130,39 @@
 			<div class="shtraf" v-if="fine">
 				<div id="shtraf">
 					<div class="bgshtraf">
-						<div class="upblock">ШТРАФ</div>
-						<div class="headline">ПРЕВЫШЕНИЕ</div>
-						<div class="headline2">СКОРОСТИ</div>
-						<div class="descrip">Вы проехали со скоростью</div>
+						<div class="upblock">FINE</div>
+						<div class="headline">EXCESS</div>
+						<div class="headline2">SPEEDS</div>
+						<div class="descrip">You drove at speed</div>
 						<div class="descripspeed">{{finespeed}} km/h</div>
 						<div class="descripprice">-${{fineprice}}</div>
 					</div>
 				</div>
 			</div>
 			<div class="exit" v-if="inBoat">
-				<a>X</a>БРОСИТЬ ЯКОРЬ
+				<a>X</a>DROP ANCHOR
 			</div>
 			<div class="exitmetro" v-if="showhelpmetro">
-				<a>E</a>ВЫЙТИ НА СТАНЦИЮ <b style="color: #ff8400">{{statinons[stationmetro]}}</b>
+				<a>E</a>GET OUT TO THE STATION <b style="color: #ff8400">{{statinons[stationmetro]}}</b>
 			</div>
 
 			<div class="exitmetro" v-if="startsnowboard">
-				<a>X</a>ПОСТАВИТЬ СНОУБОРД НА ЗЕМЛЮ
+				<a>X</a>PUT THE SNOWBOARD ON THE GROUND
 			</div>
 			<div class="exitmetro" v-if="stopsnowboard">
-				<a>E</a>СЛЕЗТЬ СО СНОУБОРДА
+				<a>E</a>GET OFF THE SNOWBOARD
 			</div>
 			<div style="padding-left: 7vw;" class="exitmetro" v-if="stopanim">
-				<a style="width: 6vw">BACKSPACE</a>ОСТАНОВИТЬ АНИМАЦИЮ
+				<a style="width: 6vw">BACKSPACE</a>STOP ANIMATION
 			</div>
 			<div class="demorgan" v-if="demorgan">
 				<div class="updemorgan">
-					<a style="left: 1vw;">Администратор</a>
+					<a style="left: 1vw;">Administrator</a>
 					<p style="left: 1vw;">{{demorganadmin}}</p>
-					<a style="right: 1vw;">Осталось</a>
-					<p style="right: 1vw;">{{(demorgantime / 60).toFixed()}} минут</p>
+					<a style="right: 1vw;">Left</a>
+					<p style="right: 1vw;">{{(demorgantime / 60).toFixed()}} minutes</p>
 				</div>
-				<h1>Причина:</h1>
+				<h1>Reason:</h1>
 				<b>{{demorganreason}}</b>
 			</div>
 			<!-- INTERACT E -->
@@ -172,7 +172,7 @@
 				<div class="iconka2">
 					E
 				</div>
-				<div class="press">Нажмите для взаимодействия</div>
+				<div class="press">Click to interact</div>
 			</div>
 			<!-- LUCKY WHEEL SPINS casinointeract2 -->
 			<div v-if="casinointeract2" class="interact">
@@ -181,14 +181,14 @@
 				<div class="iconka2">
 					E
 				</div>
-				<div class="press">Нажмите для прокрутки колеса удачи</div>
+				<div class="press">Click to spin the wheel of fortune</div>
 			</div>
 
 			<div v-if="payday" class="payday">
 				<div id="payday">
 					<img src="./assets/images/hud/paydaybg.png" class="bgpayday">
 					<div class="paybg">
-						<div class="namep">PAYDAY</div>
+						<div class="namep">PAYCHECK</div>
 						<div class="timep">{{time}}</div>
 						<div class="circle">
 							<div class="lvl">{{lvl}}</div>
@@ -199,9 +199,9 @@
 						</div>
 						<div class="blocknonwork">
 							<div class="paymentpay">+${{paydaycount}}</div>
-							<div class="namedesc">Пособие по безработице</div>
+							<div class="namedesc">Unemployment benefits</div>
 						</div>
-						<div class="circle_desc">Уровень</div>
+						<div class="circle_desc">Level</div>
 						<div class="bgline"></div>
 					</div>
 				</div>
@@ -223,7 +223,7 @@
 
 			</div>
 			<div v-if="timerheist != 0" class="timer">
-				<a>Ограбление магазина</a>
+				<a>Store Robbery</a>
 				<div class="linetimer">
 					<div :style="{width: + timerheist/3.16 + 'vw'}" class="lineactivetimer"></div>
 				</div>
@@ -303,7 +303,7 @@
 						<div class="block">
 							<span style="color: #fff;" class="trans">{{gear == 0 ? "N" : gear}}</span>
 						</div>
-						<p>передача</p>
+						<p>gear</p>
 					</div>
 				</div>
 				<div class="info-gears">
@@ -353,10 +353,10 @@
 				<div class="s3speed"></div>
 			</div>
 			<div v-if="hand" class="notifybtn">
-				<div class="textbtn">Незнакомец(30) <a style="opacity: 0.7">предлагает Вам пожать руки</a></div>
-				<div class="btny">Y<p>Нажмите чтобы согласиться</p>
+				<div class="textbtn">Stranger(30) <a style="opacity: 0.7">offers you to shake hands</a></div>
+				<div class="btny">Y<p>Click to agree</p>
 				</div>
-				<div class="btnn">N<p>Нажмите чтобы отказаться</p>
+				<div class="btnn">N<p>Click to cancel</p>
 				</div>
 			</div>
 		</div>
@@ -367,7 +367,7 @@
 			<!-- <img src="./assets/images/player_hud/noty_fleeca.png" alt="" class="icon"> -->
 			<!-- <div class="content"> -->
 			<!-- <div class="title"></div> -->
-			<!-- <div class="text">Вы успешно завели автомобиль ура ура ура и вам дается когда тада все почему да потому что ты не живешь</div> -->
+			<!-- <div class="text">You successfully started the car, hurray, hurray, hurray, and you are given when tada, why yes, because you don’t live</div> -->
 			<!-- </div> -->
 			<!-- </div> -->
 		</div>

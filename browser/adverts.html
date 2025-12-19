@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <link rel="stylesheet" href="./assets/css/adverts.css">
     <meta charset="utf-8">
-    <title>Golemo - Adverts</title>
+    <title>Harbo-Adverts</title>
 </head>
 <style>
     body {
@@ -16,13 +16,13 @@
         <div class="ticketfull">
             <div class="ticketinside">
                 <div class="advert">
-                    <p class="adverttext">Объявления</p>
+                    <p class="adverttext">Ads</p>
                     <div class="boxes">
                         <div class="boxadverts">
                             <div class="oneadvert" v-if="adverts.length" v-for="advert in adverts" :key="advert.id"
                                  @click="selectadvert(advert)">
                                 <div class="advertinfo">
-                                    <p class="task">Объявление</p>
+                                    <p class="task">Ads</p>
                                     <p class="tasknumber">№ {{advert.id}}</p>
                                     <p class="taskuser">{{advert.author}}</p>
                                 </div>
@@ -44,12 +44,12 @@
                     </div>
                 </div>
                 <div class="answer">
-                    <p class="adverttext">Редактирование</p>
+                    <p class="adverttext">Edit</p>
                     <div class="boxes">
                         <div class="boxadverts">
                             <div class="oneadvert" v-if="selected">
                                 <div class="advertinfo">
-                                    <p class="task">Объявление</p>
+                                    <p class="task">Add</p>
                                     <p class="tasknumber">№ {{selected.id}}</p>
                                     <p class="taskuser">{{selected.author}}</p>
                                 </div>
@@ -63,14 +63,14 @@
                         <div class="textquestion">
                             <form action="">
                                 <p>
-                                    <textarea class="user" ref="answerBox" v-model="answer" placeholder="Введите Ваш вариант объявления"
+                                    <textarea class="user" ref="answerBox" v-model="answer" placeholder="Enter your ad type"
                                               cols="30" rows="5"></textarea>
                                 </p>
                             </form>
                         </div>
                         <div class="buttonquestion">
                             <form class="butabs">
-                                <p><button class="buttonone" @click.prevent="sendAnswer(selected)">Закончить</button></p>
+                                <p><button class="buttonone" @click.prevent="sendAnswer(selected)">End</button></p>
                             </form>
                             <form class="butabr">
                                 <p><button class="buttononek" @click.prevent="returnAdvert(selected)">Вернуть</button></p>
@@ -80,7 +80,7 @@
                 </div>
                 <!--answer -->
                 <div class="template">
-                    <p class="adverttext">Шаблоны</p>
+                    <p class="adverttext">Templates</p>
                     <div class="boxestempl">
                         <div class="boxtemplates">
                             <!-- Скоро будут шаблоны ;) -->
@@ -89,7 +89,7 @@
                     <div class="texttempl">
                         <form action="">
                             <p>
-                                <textarea class="user" placeholder="Шаблоны пока что неактивны."
+                                <textarea class="user" placeholder="The templates are not active yet."
                                           cols="30" rows="5"></textarea>
                             </p>
                         </form>
